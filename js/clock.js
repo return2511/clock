@@ -62,7 +62,7 @@ function() {
 
 	var drawClockNeedle = function(hour, min, sec) {
 		drawHour(hour, min);
-		drawMinter(min);
+		drawMinter(min ,sec);
 		drawSec(sec);
 		drawDot();
 	}
@@ -81,11 +81,12 @@ function() {
 		ctx.restore();
 	}
 
-	var drawMinter = function(min ) {
+	var drawMinter = function(min , sec) {
 		ctx.save();
 		ctx.beginPath();
 		var rad = 2 * Math.PI / 60 * min;
-		ctx.rotate(rad );
+		var secrad = 2 * Math.PI / 60 / 60 *sec ;
+		ctx.rotate(rad + secrad);
 		ctx.lineCap = "round";
 		ctx.lineWidth = 4 *rem;
 		ctx.moveTo(0, 10 *rem);
