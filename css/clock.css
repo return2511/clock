@@ -1,0 +1,10 @@
+
+.clock-cont {
+	text-align: center;
+	margin-top: 100px;
+}
+
+.clock {
+	background: #f3f2f5;
+	border: 1px solid #ccc;
+}
